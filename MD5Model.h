@@ -26,10 +26,10 @@
  
  RELEASE NOTES
  
- Version 1.0 (Current Version)
+ Version 1.0.0 (Current Version)
  
  *Inital release*
-    Provides the MD5 output of a NSString Object.
+    Only provides output for MD5 for a NSString Object.
  
 */
 
@@ -38,9 +38,7 @@
 
 @interface MD5Model : NSObject
 
-@property (strong, nonatomic) NSString *inputText;
-@property (strong, nonatomic) NSString *outputText;
-
-- (NSString *) getMD5String;
+// Creates a MD5 encrypted string from a text string
++ (NSString *) getMD5String:(NSString *)input;
 
 @end

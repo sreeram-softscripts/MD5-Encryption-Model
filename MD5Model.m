@@ -27,28 +27,22 @@
 
 @implementation MD5Model
 
-- (NSString *) getMD5String
++ (NSString *) getMD5String:(NSString *)input
 {
-    
-    // Get plan text input
-    NSString *textString = [NSString stringWithFormat:@"%@", self.inputText];
+    // Get text string
+    NSString *inputTextString = [NSString stringWithFormat:@"%@", input];
     
     // Encrypt plan text to MD5
     NSMutableString *result = [NSMutableString string];
     UInt8 bytes[16];
-    NSInteger i;
-    
-    CC_MD5(textString.UTF8String, [textString lengthOfBytesUsingEncoding:NSUTF8StringEncoding], bytes);
-    
-    for(i = 0; i < 16; i++) {
+    NSInteger i;CC_MD5(inputTextString.UTF8String, [inputTextString lengthOfBytesUsingEncoding:NSUTF8StringEncoding], bytes);
+    for(i = 0; i < 16; i++)
+    {
         [result appendFormat:@"%02x", bytes[i]];
     }
     
-    // Return ouput
-    self.outputText = result;
+    // Return encrypted string
     return result;
-    
-    // NSLog(@"%@", result);
 }
 
 @end
