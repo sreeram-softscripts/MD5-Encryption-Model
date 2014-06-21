@@ -1,8 +1,7 @@
 MD5-Encryption-Model
 ====================
 #### How to install
-
- *Copy the MD5Model.h/m files to your project
+Copy the MD5Model.h/m files to your project
 
 #### How to implement
 In the .m file of your ViewContoller class, import the MD5Model header file<br>
